@@ -1,0 +1,18 @@
+<%= semantic_form_for @place ,html:  {multipart: true} do |f| %>
+    <%= f.inputs do %>
+        <%= f.input :place_name %>
+        <%= f.input :category_id, as: :select , :collection => Category.pluck(:category_name,:id) %>
+        <%= f.input :location_id, as: :select , :collection => Location.pluck(:location_name,:id)%>
+        <%= f.input :short_description , as: :text ,rows_size: 3 %>
+        <%= f.input :address %>
+        <%= f.input :contact_number , label: 'Phone' %>
+        <%= f.input :contact_person %>
+        <%= f.input :photo, as: :file%>
+
+
+    <% end %>
+
+    <%= f.actions do %>
+        <%= f.action :submit, :as => :input %>
+    <% end %>
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Places#index</h1>
+<p>Find me in app/views/locations/index.html.erb</p>
+
+
+<div class="row">
+<div class="small-2 columns">Name</div>
+<div class="small-1 columns">Location</div>
+<div class="small-2 columns">Address</div>
+<div class="small-2 columns">Description</div>
+<div class="small-4 columns">Photo</div>
+<div class="small-1 columns"></div>
+</div>
+<hr />
+  <% @places.each do |place| %>
+  
+  <div class="row">
+<div class="small-2 columns"><%= place.place_name %></div>
+<div class="small-1 columns"><%= place.location.location_name %></div>
+<div class="small-2 columns"><%= place.address %></div>
+<div class="small-2 columns"><%= place.short_description %></div>
+<div class="small-4 columns"><%= image_tag place.photo.to_s %></div>
+<div class="small-1 columns">
+	<%= link_to 'Show', place %>|
+	<%= link_to 'Edit', edit_place_path(place) %>|
+	<%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>	
+</div>
+</div>    
+  <% end %> 
+<%= link_to 'New Place', new_place_path%>
