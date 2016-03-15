@@ -35,6 +35,6 @@ end
 end
   private
   def category_params
-    params.require(:category).permit(:category_name,:picture)
+    params.require(:category).permit(:category_name,:photo)
   end
 end
