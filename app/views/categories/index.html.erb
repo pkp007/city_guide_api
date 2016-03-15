@@ -1,0 +1,22 @@
+<h1>Categories#index</h1>
+<p>Find me in app/views/categories/index.html.erb</p>
+<div class="row">
+<div class="small-2 columns">Category</div>
+<div class="small-4 columns">Photo</div>
+<div class="small-4 columns"></div>
+</div>
+<hr />
+  <% @categories.each do |category| %>
+
+  <div class="row">
+<div class="small-2 columns"><%= category.category_name %></div>
+
+<div class="small-4 columns"><%= image_tag category.picture.to_s %></div>
+<div class="small-1 columns">
+	<%= link_to 'Show', category %>|
+	<%= link_to 'Edit', edit_category_path(category) %>|
+	<%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+</div>
+  <% end %>
+<%= link_to 'New Category', new_category_path%>
