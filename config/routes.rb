@@ -1,20 +1,12 @@
 Rails.application.routes.draw do
 
+
+
   devise_for :users
   resources :places
   resources :locations
   resources :categories
  mount API::Base => '/api'
-
-  # get 'places/index'
-  #
-  # get 'places/create'
-  #
-  # get 'places/show'
-  #
-  # get 'places/destroy'
-  #
-  # get 'places/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
