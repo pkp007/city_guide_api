@@ -35,7 +35,7 @@ gem 'formtastic', '3.0'
 # for processing images
 gem 'rmagick'
 
-gem 'net-ssh'
+#gem 'net-ssh'
 gem  'fog', require: 'fog/aws'
 
 gem 'foundation-rails'
