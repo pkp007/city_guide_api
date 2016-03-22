@@ -35,9 +35,8 @@ gem 'formtastic', '3.0'
 # for processing images
 gem 'rmagick'
 
-gem 'net-ssh'
-gem  'fog', require: 'fog/aws'
-
+#gem 'net-ssh'
+gem  'fog'
 gem 'foundation-rails'
 #gem "twitter-bootstrap-rails"
 # Use ActiveModel has_secure_password
