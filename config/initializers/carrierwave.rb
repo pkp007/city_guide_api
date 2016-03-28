@@ -17,18 +17,20 @@ region: ENV[S3_REGION]
   }
 
 # For testing, upload files to local `tmp` folder.
-  if Rails.env.test? || Rails.env.cucumber?
-    config.storage = :file
-    config.enable_processing = false
-    config.root = "#{Rails.root}/tmp"
-  else
-    config.storage = :fog
-  end
+  #if Rails.env.test? || Rails.env.cucumber?
+  #  config.storage = :file
+  #  config.enable_processing = false
+#    config.root = "#{Rails.root}/tmp"
+#  else
+#    config.storage = :fog
+#  end
 
   if Rails.env.development?
-    config.fog_directory  = 'cityguide-devassets'
+    config.storage = :file
+  #  config.fog_directory  = 'cityguide-devassets'
   else
-    config.fog_directory  = 'cityguide-assets'
+    config.storage = :file
+  #  config.fog_directory  = 'cityguide-assets'
   end
 
   config.fog_public     = true

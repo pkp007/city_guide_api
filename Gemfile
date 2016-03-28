@@ -36,7 +36,7 @@ gem 'formtastic', '3.0'
 gem 'rmagick'
 
 #gem 'net-ssh'
-gem  'fog'
+gem  'fog' 
 gem 'foundation-rails'
 #gem "twitter-bootstrap-rails"
 # Use ActiveModel has_secure_password

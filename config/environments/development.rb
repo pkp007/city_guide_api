@@ -35,7 +35,10 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-
+  S3_KEY = ""
+  S3_SECRET = ""
+  S3_REGION = ""
+  S3_BUCKET_NAME = ""
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
