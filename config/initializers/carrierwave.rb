@@ -1,4 +1,5 @@
 CarrierWave.configure do |config|
+  if Rails.env.production?
   config.fog_credentials = {
 # Configuration for Amazon S3 should be made available through an Environment variable.
 # For local installations, export the env variable through the shell OR
@@ -9,6 +10,8 @@ CarrierWave.configure do |config|
 # $ heroku config:add S3_KEY=your_s3_access_key S3_SECRET=your_s3_secret S3_REGION=eu-west-1 S3_ASSET_URL=http://assets.example.com/ S3_BUCKET_NAME=s3_bucket/folder
 
 # Configuration for Amazon S3
+
+
 provider: 'AWS',
 aws_access_key_id: ENV[S3_KEY],
 aws_secret_access_key: ENV[S3_SECRET],
@@ -25,14 +28,15 @@ region: ENV[S3_REGION]
 #    config.storage = :fog
 #  end
 
-  if Rails.env.development?
-    config.storage = :file
+#  if Rails.env.development?
+  #  config.storage = :file
   #  config.fog_directory  = 'cityguide-devassets'
-  else
-    config.storage = :file
-  #  config.fog_directory  = 'cityguide-assets'
-  end
+#  else
+#    config.storage = :file
+    config.fog_directory  = 'usar-s3'
+#  end
 
-  config.fog_public     = true
-  config.cache_dir = "#{Rails.root}/tmp/uploads" # To let CarrierWave work on heroku
+#  config.fog_public     = true
+#  config.cache_dir = "#{Rails.root}/tmp/uploads" # To let CarrierWave work on heroku
+end
 end
