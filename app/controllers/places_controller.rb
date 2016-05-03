@@ -42,5 +42,5 @@ end
 end
 
 def place_params
-  params.require(:place).permit(:place_name, :location_id, :category_id, :address, :photo, :short_description, :contact_number, :contact_person)
+  params.require(:place).permit(:place_name, :location_id, :category_id, :address,:latitude ,:longitude, :photo, :short_description, :contact_number, :contact_person)
 end
