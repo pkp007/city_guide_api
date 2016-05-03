@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+#gem 'ruby', '2.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use mysql as the database for Active Record
@@ -30,13 +30,15 @@ gem 'devise'
 
 # used for image uploading
 gem 'carrierwave'
+
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
 #used for generating forms with style
 gem 'formtastic', '3.0'
 # for processing images
 gem 'rmagick'
 
 #gem 'net-ssh'
-gem  'fog' 
+# gem  'fog'
 gem 'foundation-rails'
 #gem "twitter-bootstrap-rails"
 # Use ActiveModel has_secure_password

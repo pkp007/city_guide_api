@@ -1,6 +1,7 @@
 CarrierWave.configure do |config|
   if Rails.env.production?
-  config.fog_credentials = {
+ config.fog_credentials = {
+
 # Configuration for Amazon S3 should be made available through an Environment variable.
 # For local installations, export the env variable through the shell OR
 # if using Passenger, set an Apache environment variable.
@@ -17,26 +18,22 @@ aws_access_key_id: ENV['S3_KEY'],
 aws_secret_access_key: ENV['S3_SECRET'],
 region: ENV['S3_REGION']
 
-  }
-
-# For testing, upload files to local `tmp` folder.
-  #if Rails.env.test? || Rails.env.cucumber?
-  #  config.storage = :file
-  #  config.enable_processing = false
-#    config.root = "#{Rails.root}/tmp"
-#  else
-#    config.storage = :fog
-#  end
-
-#  if Rails.env.development?
-  #  config.storage = :file
-  #  config.fog_directory  = 'cityguide-devassets'
-#  else
-#    config.storage = :file
+ }
     config.fog_directory  = 'usar-s3'
-#  end
+ end
 
-#  config.fog_public     = true
-#  config.cache_dir = "#{Rails.root}/tmp/uploads" # To let CarrierWave work on heroku
-end
+
+
+#end
+#-------------------------------------------------Code For FTP Access------------
+#  config.ftp_host = "50.87.248.83"
+#  config.ftp_port = 21
+#  config.ftp_user = "cityguide@aryahi.co"
+#  config.ftp_passwd = "#Usar@2016"
+
+#  config.ftp_folder = "/home1/aryahico/public_html/cityguide_photos"
+
+#  config.ftp_url = "http://aryahi.co/cityguide_photos"
+#  config.ftp_passive = false # false by default
+
 end

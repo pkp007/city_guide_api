@@ -5,6 +5,8 @@
         <%= f.input :location_id, as: :select , :collection => Location.pluck(:location_name,:id)%>
         <%= f.input :short_description , as: :text ,rows_size: 3 %>
         <%= f.input :address %>
+        <%= f.input :latitude %>
+        <%= f.input :longitude %>
         <%= f.input :contact_number , label: 'Phone' %>
         <%= f.input :contact_person %>
         <%= f.input :photo, as: :file%>
