@@ -31,14 +31,14 @@ gem 'devise'
 # used for image uploading
 gem 'carrierwave'
 
-gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
+# gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
 #used for generating forms with style
 gem 'formtastic', '3.0'
 # for processing images
 gem 'rmagick'
 
 #gem 'net-ssh'
-# gem  'fog'
+gem  'fog'
 gem 'foundation-rails'
 #gem "twitter-bootstrap-rails"
 # Use ActiveModel has_secure_password
