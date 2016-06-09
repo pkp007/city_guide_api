@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503091707) do
+ActiveRecord::Schema.define(version: 20160514085906) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name", limit: 255
     t.string   "photo",         limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string   "deviceID",     limit: 255
+    t.string   "email",        limit: 255, default: ""
+    t.string   "message",      limit: 255, default: ""
+    t.boolean  "likes",                    default: false
+    t.float    "rating_value", limit: 24
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.integer  "place_id",     limit: 4,                   null: false
   end
 
   create_table "locations", force: :cascade do |t|
